@@ -1,0 +1,17 @@
+header {
+    text-align: center;
+    font-size: 6em;
+}
+.container {
+    height: 65vmin;
+    width: 65vmin;
+    border: 2px solid black;
+    display: grid;
+    margin: auto;
+}
+.button {
+    margin:auto;
+    text-align: center;
+    display: block;
+    margin-bottom: 30px;
+}
