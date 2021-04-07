@@ -15,3 +15,9 @@ header {
     display: block;
     margin-bottom: 30px;
 }
+.color {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+    width: 65vmin;
+}
