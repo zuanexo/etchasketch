@@ -2,6 +2,9 @@ header {
     text-align: center;
     font-size: 6em;
 }
+p {
+    text-align: center;
+}
 .container {
     height: 65vmin;
     width: 65vmin;

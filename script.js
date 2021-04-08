@@ -2,6 +2,7 @@ let container = document.querySelector('.container')
 let lastGridSize
 let color = "black"
 let greyLum =90
+let penOn = true
 
 
 function gridMaker(gridSize) {
@@ -34,6 +35,10 @@ button.onclick = () =>{
     }
 }
 function colorFunc(e) {
+    let bg=e.target.style.backgroundColor
+    if (!penOn){
+        return bg
+    }
     if (color=="rand") { 
        
         let rc=`hsl(${Math.floor(Math.random()*360)},${Math.floor(Math.random()*80)+20}%,${Math.floor(Math.random()*50)+20}%)`
@@ -41,7 +46,6 @@ function colorFunc(e) {
     } else if(color=="black"){
         return ("rgb(0, 0, 0)")
     } else if(color=="grey") {
-        let bg=e.target.style.backgroundColor
         if (bg.match(/rgba/)) {
             let opacity = Number(bg.slice(-4,-1))
             return(`rgba(0, 0, 0, ${opacity + 0.1})`);    
@@ -69,5 +73,12 @@ document.querySelector("#grey").onclick=()=>{color="grey"}
 //custom//
 document.querySelector("#custom").onchange=(event)=>{color=event.target.value}
 
+//penOnOff//
+document.body.addEventListener('keyup', (e)=>{
+    if (e.key==" ") {
+        penOn=!penOn
+    }
+}
+)
 
 gridMaker(16)
